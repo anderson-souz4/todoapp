@@ -17,7 +17,7 @@ public class ProjectController {
 
     public void save(Project project) {
 
-        String sql = "INSERT INTO projects(name, description, createdAt, updatedAt) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO projects(name, descricao, createdAt, updatedAt) VALUES (?,?,?,?)";
         Connection connection = null;
         PreparedStatement statement = null;
 
@@ -32,7 +32,7 @@ public class ProjectController {
             statement.execute();
 
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao salvar tarefa", e);
+            throw new RuntimeException("Erro ao salvar tarefa", e.fillInStackTrace());
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
         }

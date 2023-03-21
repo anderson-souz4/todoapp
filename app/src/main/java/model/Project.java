@@ -11,11 +11,12 @@ import java.util.Date;
  * @author ander
  */
 public class Project {
+
     private int id;
     private String name;
     private String description;
-    private Date createdAt;
-    private Date updatedAt;
+    private Date createdAt = new Date();
+    private Date updatedAt = new Date();
 
     public Project() {
     }
@@ -24,8 +25,6 @@ public class Project {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
     }
 
     public int getId() {
@@ -36,7 +35,7 @@ public class Project {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) {  
         this.name = name;
     }
 
@@ -68,9 +67,5 @@ public class Project {
     public String toString() {
         return "Project{" + "id=" + id + ", name=" + name + ", description=" + description + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
-    
-    
-    
-    
-    
+
 }
