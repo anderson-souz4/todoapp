@@ -41,7 +41,7 @@ public class ProjectController {
     public void update(Project project) {
 
         String sql = "UPDATE projects SET name = ?, "
-                + "description = ?, "
+                + "descricao = ?, "
                 + "createdAt = ?, "
                 + "updatedAt = ? "
                 + "WHERE id = ?";
@@ -105,7 +105,7 @@ public class ProjectController {
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                Project project = new Project(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("description"), resultSet.getDate("createdAt"), resultSet.getDate("updatedAt"));
+                Project project = new Project(resultSet.getInt("id"), resultSet.getString("name"), resultSet.getString("descricao"), resultSet.getDate("createdAt"), resultSet.getDate("updatedAt"));
 
                 projects.add(project);
 
